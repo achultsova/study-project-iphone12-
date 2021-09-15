@@ -101,8 +101,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 };
 
+const modal = () => {
+    const cardDetailsButtonBuy = document.querySelector('.card-details__button_buy'),
+    modalElem = document.querySelector('.modal');
+
+    cardDetailsButtonBuy.addEventListener('click', () => {
+        modalElem.classList.add('open');
+    });
+
+    modalElem.addEventListener('click', (event) => {
+    const target = event.target;
+        if (target.classList.contains('modal__close')) {
+            modalElem.classList.remove('open');
+        }
+    });
+};
 
     tabs();
     accordion();
+    modal();
     
 });
